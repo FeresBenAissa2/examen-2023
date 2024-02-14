@@ -8,5 +8,5 @@ import java.util.List;
 public interface IUtilistateurService {
     List<Utilisateur> ajouterLecteurs(List<Utilisateur> lecteurs) ;
     String affecterLivreALecteur(long idLivre, long idLecteur);
-
+    List<Utilisateur> getAllLecteurs();
 }

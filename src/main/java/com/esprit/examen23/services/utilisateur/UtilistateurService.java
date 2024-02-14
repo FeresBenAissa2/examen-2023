@@ -1,6 +1,7 @@
 package com.esprit.examen23.services.utilisateur;
 
 import com.esprit.examen23.dao.entites.Livre;
+import com.esprit.examen23.dao.entites.Role;
 import com.esprit.examen23.dao.entites.Utilisateur;
 import com.esprit.examen23.dao.repositories.LivreRepository;
 import com.esprit.examen23.dao.repositories.UtilisateurRepository;
@@ -31,6 +32,11 @@ public class UtilistateurService implements IUtilistateurService {
             utilisateurRepository.save(lecteur);
             return "L'affectation du livre "+idLivre+" au lecteur "+lecteur.getNom()+" est effectué avec succès !";
         }
+    }
+
+    @Override
+    public List<Utilisateur> getAllLecteurs() {
+        return utilisateurRepository.findByRole(Role.LECTEUR);
     }
 
 

@@ -44,15 +44,10 @@ public class LivreService implements ILivreService{
         }
 
     }
-    @Scheduled(cron = "0 * * * * *" )
-    @Override
-    public String afficher() {
-        List<Livre>livres = livreRepository.findAll();
-        for (Livre l :livres){
-            System.out.println(l);
-            log.debug(l.getNom());
-        }
-        return "affichier";
 
+    @Override
+    public List<Livre> getAllLivre() {
+        return livreRepository.findAll();
     }
+
 }
